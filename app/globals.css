@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add this CSS to your stylesheet */
+.link-animation {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.link-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: left bottom;
+  transition: transform 0.3s ease-out;
+}
+
+.link-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: left bottom;
+}
+
+.prose u {
+  text-decoration: underline;
+}
