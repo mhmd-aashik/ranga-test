@@ -4,10 +4,16 @@ import Review from "@/components/home/Review";
 import Service from "@/components/home/Service";
 import TrendBlog from "@/components/home/TrendBlog";
 import Blog from "@/components/home/TrendingBlog/Blog";
-import { fetchRatings, fetchSingleBlog } from "@/lib/fetchBlogs";
+import {
+  fetchRatings,
+  fetchSingleBlog,
+  fetchSiteMapBlogs,
+} from "@/lib/fetchBlogs";
 import Image from "next/image";
 
 export const revalidate = 0;
+
+const base_url = "localhost";
 
 export default async function Home() {
   const results = await fetchSingleBlog();

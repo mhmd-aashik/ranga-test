@@ -151,3 +151,18 @@ export async function fetchRatings() {
     return { error: "Fetch failed" };
   }
 }
+
+export async function fetchSiteMapBlogs() {
+  try {
+    const { data } = await axios.get(`${process.env.BACKEND}/blogs?populate=*`);
+    const posts = data?.data?.slice(0, 5).map(({ attributes }: any) => ({
+      slug: attributes.slug,
+    }));
+
+    const post = posts.map(({ slug }: any) => slug);
+
+    return post;
+  } catch (error) {
+    console.error(error);
+  }
+}

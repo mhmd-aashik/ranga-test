@@ -1,7 +1,5 @@
 import TrandingSlides from "@/components/blog/TrandingSlides";
 import Social from "@/components/shared/Social";
-import { fetchBlogsById } from "@/lib/fetchBlogs";
-import { Link } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import ReactMarkdown from "react-markdown";
