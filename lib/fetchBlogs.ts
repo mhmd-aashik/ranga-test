@@ -155,11 +155,14 @@ export async function fetchRatings() {
 export async function fetchSiteMapBlogs() {
   try {
     const { data } = await axios.get(`${process.env.BACKEND}/blogs?populate=*`);
-    const posts = data?.data?.slice(0, 5).map(({ attributes }: any) => ({
+    const posts = data?.data?.map(({ attributes }: any) => ({
       slug: attributes.slug,
+      createdAt: attributes.createdAt,
     }));
 
-    const post = posts.map(({ slug }: any) => slug);
+    const post = posts.map(({ slug, createdAt }: any) => {
+      return { slug, createdAt };
+    });
 
     return post;
   } catch (error) {
