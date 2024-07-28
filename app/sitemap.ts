@@ -17,9 +17,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   return [
-    {
-      url: `${base_url}/blogs`,
-    },
+    // {
+    //   url: `${base_url}/blogs`,
+    // },
     ...postEntries,
   ];
 }
