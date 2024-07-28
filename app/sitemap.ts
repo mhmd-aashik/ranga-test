@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 
 export const revalidate = 0;
 
-const base_url = "www.https://www.aashik.dev";
+const base_url = "https://www.aashik.dev";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts: any = await fetchSiteMapBlogs();
