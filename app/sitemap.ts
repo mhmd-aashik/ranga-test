@@ -2,7 +2,7 @@ import { fetchSiteMapBlogs } from "@/lib/fetchBlogs";
 import { MetadataRoute } from "next";
 
 export const revalidate = 0;
-const base_url = "https://www.https://www.rangatechnologies.com/";
+const base_url = "https://www.https://www.aashik.dev/";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts: any = await fetchSiteMapBlogs();
